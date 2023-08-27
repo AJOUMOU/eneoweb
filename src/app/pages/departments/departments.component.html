@@ -1,0 +1,141 @@
+<body>
+    <!-- sidebar and nav -->
+    <div class="sidebar">
+
+        <ul class="nav-links">
+            <li>
+                <a routerLink="/home" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/departments">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Departments</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Quaters</span>
+                </a>
+            </li>
+            <!-- <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Stock</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Total order</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Team</span>
+          </a>
+        </li>-->
+            <li>
+                <a routerLink="/agents">
+                    <i class='bx bx-run'></i>
+                    <span class="links_name">Agents</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-paste'></i>
+                    <span class="links_name">Request</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/profile">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Profile</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a (click)="logOut()">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+
+                <span class="dashboard">Department</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="profile-details">
+                <span class="admin_name">Prem Shahi</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+        <!-- sidebar and nav ends here -->
+        <div class="home-content">
+            <div class="col-md-12" style="padding: 10px;">
+                
+                    <button mat-raised-button color="primary" style="float: right;" (click)="openSheet()">Add Department</button>
+           
+             
+                <H1>Consult Department</H1>
+                <mat-table [dataSource]="department" class="mat-elevation-z8" >
+                    <!-- Define your table columns here -->
+                    <ng-container matColumnDef="ID">
+                        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="NAME">
+                        <mat-header-cell *matHeaderCellDef>NAME</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{ element.department_name }}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="ACTION">
+                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                        <mat-cell *matCellDef="let element"><i class='bx bxs-trash'color="red" (click)="deleteDepartment(element.id)"></i></mat-cell>
+                    </ng-container>
+
+
+                    <!-- Add more columns as needed -->
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                </mat-table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+            </div>
+          
+        </div>
+
+
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+
+</body>

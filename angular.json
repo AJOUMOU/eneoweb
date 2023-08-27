@@ -30,9 +30,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/js/framework.js",
+              "src/assets/js/settings.js",
+              "src/assets/js/index-map.js",
+              "src/assets/js/datamaps.all.min.js",
+              "src/assets/js/topojson.v1.min.js",
+              "src/assets/js/d3.v3.min.js",
+              "src/assets/js/index-chart.js",
+              "src/assets/js/table-line.js",
+              "src/assets/js/Chart.Financial.js",
+              "src/assets/js/Chart.bundle.min.js",
+              "src/assets/js/jquery.webticker.min.js",
+              "src/assets/js/moment.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,9 +110,23 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/framework.js",
+              "src/assets/js/settings.js",
+              "src/assets/js/index-map.js",
+              "src/assets/js/datamaps.all.min.js",
+              "src/assets/js/topojson.v1.min.js",
+              "src/assets/js/d3.v3.min.js",
+              "src/assets/js/index-chart.js",
+              "src/assets/js/table-line.js",
+              "src/assets/js/Chart.Financial.js",
+              "src/assets/js/Chart.bundle.min.js",
+              "src/assets/js/jquery.webticker.min.js",
+              "src/assets/js/moment.js"
+            ]
           }
         }
       }

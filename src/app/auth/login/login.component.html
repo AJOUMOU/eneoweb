@@ -26,10 +26,10 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" placeholder="Email" [(ngModel)]="email" name="email"/>
+			<input type="password" placeholder="Password"[(ngModel)]="password" name="password" />
 			<a href="#">Forgot your password?</a>
-			<button style="cursor:pointer;" routerLink="/home">Sign In</button>
+			<button style="cursor:pointer;"(click)="login()">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -42,7 +42,7 @@
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp" routerLink="/register" style="cursor: pointer;">Sign Up</button>
+				
 			</div>
 		</div>
 	</div>

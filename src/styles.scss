@@ -1,3 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~normalize.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~boxicons/css/boxicons.min.css";
+@import "./assets/css/animate.min.css";
+@import "./assets/css/bootstrap.min.css";
+@import "./assets/css/cropper.min.css";
+@import "./assets/css/datatables.min.css";
+@import "./assets/css/driver.min.css";
+@import "./assets/css/driver.min.css";
+@import "./assets/css/ion.rangeSlider.min.css";
+@import "./assets/css/jquery-ui.min.css";
+@import "./assets/css/morris.css";
+@import "./assets/css/slick.css";
+@import "./assets/css/style.css";
+@import "./assets/css/sweetalert2.min.css";
+@import "./assets/css/toastr.min.css";
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
