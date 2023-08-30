@@ -21,13 +21,13 @@
                     <span class="links_name">Quaters</span>
                 </a>
             </li>
-            <!-- <li>
-          <a href="#">
+            <li>
+          <a routerLink="/document">
             <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Analytics</span>
+            <span class="links_name">Document Request</span>
           </a>
         </li>
-        <li>
+       <!-- <li>
           <a href="#">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Stock</span>
@@ -75,7 +75,7 @@
         <nav>
             <div class="sidebar-button">
 
-                <span class="dashboard">Quaters</span>
+                <span class="dashboard">Documents</span>
             </div>
             <!-- <div class="search-box">
                 <input type="text" placeholder="Search...">
@@ -89,33 +89,25 @@
         <!-- sidebar and nav ends here -->
         <div class="home-content">
             <div class="col-md-12" style="padding: 10px;">
-
-                <button mat-raised-button color="primary" style="float: right;" (click)="openSheet()">Add
-                    User</button>
-
-
-                <H1>Consult Quaters</H1>
-                <mat-table [dataSource]="employee" class="mat-elevation-z8">
+                
+                    <button mat-raised-button color="primary" style="float: right;" (click)="openSheet()">Add Document</button>
+           
+             
+                <H1>Consult Document</H1>
+                <mat-table [dataSource]="department" class="mat-elevation-z8" >
                     <!-- Define your table columns here -->
-                    <ng-container matColumnDef="NAME">
-                        <mat-header-cell *matHeaderCellDef>NAME</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+                    <ng-container matColumnDef="ID">
+                        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
                     </ng-container>
 
-                    <ng-container matColumnDef="Department">
-                        <mat-header-cell *matHeaderCellDef>DEPARTMENT</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{ element.dep }}</mat-cell>
+                    <ng-container matColumnDef="NAME">
+                        <mat-header-cell *matHeaderCellDef>NAME</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{ element.department_name }}</mat-cell>
                     </ng-container>
                     <ng-container matColumnDef="ACTION">
                         <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                        <mat-cell *matCellDef="let element">
-                            <i class='bx bxs-trash' color="red"
-                                (click)="deleteUser(element.id)" style="padding-right: 20px;">
-                            </i>
-                                <i class='bx bxs-hand-up' color="red"
-                                (click)="updateSheet(element.id)">
-                            </i>
-                            </mat-cell>
+                        <mat-cell *matCellDef="let element"><i class='bx bxs-trash'color="red" (click)="deleteDocument(element.id)"></i></mat-cell>
                     </ng-container>
 
 
@@ -128,7 +120,7 @@
                 <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
 
             </div>
-
+          
         </div>
 
 

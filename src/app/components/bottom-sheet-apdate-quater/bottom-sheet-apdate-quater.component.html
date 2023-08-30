@@ -1,4 +1,4 @@
-<h1>Add a new quater</h1>
+<h1>Update quater</h1>
 <form class="my-form">
     <label for="input1">NAME OF QUATER:</label>
     <input type="text" id="input1" name="input1" required [(ngModel)]="quater.name">
@@ -20,5 +20,5 @@
       <option *ngFor="let option of optionsArray" [value]="option">{{option}}</option>
     </select>
   
-    <button type="submit"(click)="addQuater()">Submit</button>
+    <button type="submit"(click)="updateQuater()">Submit</button>
   </form>

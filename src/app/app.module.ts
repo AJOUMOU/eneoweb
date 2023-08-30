@@ -41,6 +41,11 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { DirectorComponent } from './pages/director/director.component';
 import { BottomSheetQuatersComponent } from './components/bottom-sheet-quaters/bottom-sheet-quaters.component';
 import { QuatersComponent } from './pages/quaters/quaters.component';
+import { BottomSheetApdateQuaterComponent } from './components/bottom-sheet-apdate-quater/bottom-sheet-apdate-quater.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { BottomSheetDocumentComponent } from './components/bottom-sheet-document/bottom-sheet-document.component';
+import { BottomSheetAgentsComponent } from './components/bottom-sheet-agents/bottom-sheet-agents.component';
+import { BottomSheetDirectorsComponent } from './components/bottom-sheet-directors/bottom-sheet-directors.component';
 
 
 
@@ -65,6 +70,11 @@ import { QuatersComponent } from './pages/quaters/quaters.component';
     DirectorComponent,
     BottomSheetQuatersComponent,
     QuatersComponent,
+    BottomSheetApdateQuaterComponent,
+    DocumentsComponent,
+    BottomSheetDocumentComponent,
+    BottomSheetAgentsComponent,
+    BottomSheetDirectorsComponent,
     
  
 

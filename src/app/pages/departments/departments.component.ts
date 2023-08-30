@@ -6,6 +6,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DialogDepartmentComponent } from 'src/app/components/dialog-department/dialog-department.component';
 import { DepartmentService } from 'src/app/services/department/department.service';
 import { Department } from 'src/app/classes/department';
+import { QuaterService } from 'src/app/services/quater/quater.service';
 
 @Component({
   selector: 'app-departments',
@@ -19,7 +20,10 @@ export class DepartmentsComponent {
 dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private _bottomSheet: MatBottomSheet,private departmentService:DepartmentService) {}
+  constructor(private _bottomSheet: MatBottomSheet,
+    private departmentService:DepartmentService,
+    private quaterService:QuaterService
+    ) {}
   ngOnInit(): void {
     this.departmentService.getAll().subscribe((data)=>{
       console.log(data);
@@ -32,13 +36,22 @@ dataSource:any;
    
   }
 
-deleteDepartment(id:number){
-  console.log(id)
-  this.departmentService.delete(id);
+async deleteDepartment(id:number,dep_name:string){
+  sessionStorage.setItem("dep_name",dep_name);
+  console.log(id);
+  console.log(dep_name)
+  try {
+    await this.quaterService.deleteAllByDep(dep_name);
+  } catch (error) {
+    console.log(error);
+  }
+  await this.departmentService.delete(id);
+
   setTimeout(()=>{
     window.location.reload();
-  },0)
- 
+  },0);
+
+
 }
 
   openSheet(): void {

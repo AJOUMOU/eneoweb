@@ -10,6 +10,7 @@ import { AgentsComponent } from './pages/agents/agents.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DirectorComponent } from './pages/director/director.component';
 import { QuatersComponent } from './pages/quaters/quaters.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'agents',component:AgentsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'director',component:DirectorComponent},
-  {path:'quaters',component:QuatersComponent}
+  {path:'quaters',component:QuatersComponent},
+  {path:'document',component:DocumentsComponent}
   
 
 

@@ -77,10 +77,10 @@
 
                 <span class="dashboard">Department</span>
             </div>
-            <div class="search-box">
+            <!-- <div class="search-box">
                 <input type="text" placeholder="Search...">
                 <i class='bx bx-search'></i>
-            </div>
+            </div> -->
             <div class="profile-details">
                 <span class="admin_name">Prem Shahi</span>
                 <i class='bx bx-chevron-down'></i>
@@ -107,7 +107,7 @@
                     </ng-container>
                     <ng-container matColumnDef="ACTION">
                         <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                        <mat-cell *matCellDef="let element"><i class='bx bxs-trash'color="red" (click)="deleteDepartment(element.id)"></i></mat-cell>
+                        <mat-cell *matCellDef="let element"><i class='bx bxs-trash'color="red" (click)="deleteDepartment(element.id,element.department_name)"></i></mat-cell>
                     </ng-container>
 
 
