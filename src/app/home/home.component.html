@@ -9,19 +9,19 @@
           <span class="links_name">Dashboard</span>
         </a>
       </li>
-      <li>
+      <li *ngIf="userdata.role==='SuperAdmin'">
         <a routerLink="/departments">
           <i class='bx bx-box'></i>
           <span class="links_name">Departments</span>
         </a>
       </li>
-      <li>
+      <li *ngIf="userdata.role==='SuperAdmin'">
         <a routerLink="/quaters">
           <i class='bx bx-list-ul'></i>
           <span class="links_name">Quaters</span>
         </a>
       </li>
-      <li>
+      <li *ngIf="userdata.role==='SuperAdmin'">
         <a routerLink="/document">
           <i class='bx bx-pie-chart-alt-2'></i>
           <span class="links_name">Documents Request</span>
@@ -45,10 +45,10 @@
             <span class="links_name">Team</span>
           </a>
         </li>-->
-      <li *ngIf="userdata.role==='SuperAdmin'">
+      <li *ngIf="userdata.role==='SuperAdmin'||userdata.role==='Admin'">
         <a routerLink="/agents">
           <i class='bx bx-run'></i>
-          <span class="links_name">Agents and admins</span>
+          <span class="links_name">Agents</span>
         </a>
       </li>
       <li *ngIf="userdata.role==='SuperAdmin'">
@@ -57,10 +57,22 @@
           <span class="links_name">Directors</span>
         </a>
       </li>
-      <li>
-        <a href="#">
+      <li *ngIf="userdata.role==='SuperAdmin'">
+        <a routerLink="/request">
           <i class='bx bx-paste'></i>
           <span class="links_name">Request</span>
+        </a>
+      </li>
+      <li *ngIf="userdata.role==='Agents'">
+        <a routerLink="/myrequest">
+          <i class='bx bx-paste'></i>
+          <span class="links_name">MyRequest</span>
+        </a>
+      </li>
+      <li *ngIf="userdata.role==='Admin'">
+        <a routerLink="/adminRequest">
+          <i class='bx bx-paste'></i>
+          <span class="links_name">DepartmentRequest</span>
         </a>
       </li>
       <li>
@@ -191,9 +203,6 @@
               <li><a href="#">$23.53</a></li>
               <li><a href="#">$46.52</a></li>
             </ul>
-          </div>
-          <div class="button">
-            <a href="#">See All</a>
           </div>
         </div>
         <div class="top-sales box">

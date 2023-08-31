@@ -46,6 +46,9 @@ import { DocumentsComponent } from './pages/documents/documents.component';
 import { BottomSheetDocumentComponent } from './components/bottom-sheet-document/bottom-sheet-document.component';
 import { BottomSheetAgentsComponent } from './components/bottom-sheet-agents/bottom-sheet-agents.component';
 import { BottomSheetDirectorsComponent } from './components/bottom-sheet-directors/bottom-sheet-directors.component';
+import { RequestComponent } from './pages/request/request.component';
+import { MyRequestComponent } from './pages/my-request/my-request.component';
+import { AdminRequestComponent } from './pages/admin-request/admin-request.component';
 
 
 
@@ -75,6 +78,9 @@ import { BottomSheetDirectorsComponent } from './components/bottom-sheet-directo
     BottomSheetDocumentComponent,
     BottomSheetAgentsComponent,
     BottomSheetDirectorsComponent,
+    RequestComponent,
+    MyRequestComponent,
+    AdminRequestComponent,
     
  
 

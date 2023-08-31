@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   private createUserurl = "http://localhost:8080/api/user/register";
+  private getAllUser = "http://localhost:8080/api/user/all";
   constructor(private http:HttpClient) { 
   }
 
@@ -17,5 +18,8 @@ createUser(user:User):Observable<User>{
 }
 login(credentials: any){
   return this.http.post<any>("http://localhost:8080/api/user/auth/login",credentials);
+}
+getallUser():Observable<any>{
+  return this.http.get<any>(this.getAllUser);
 }
 }

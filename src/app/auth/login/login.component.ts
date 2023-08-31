@@ -34,8 +34,10 @@ export class LoginComponent {
         
       });
       console.log(data);
-      this
       this.router.navigate(['/home']);
+       setTimeout(()=>{
+    window.location.reload();
+  },0);
       
     })
   }

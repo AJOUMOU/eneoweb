@@ -7,6 +7,7 @@ import { DialogDepartmentComponent } from 'src/app/components/dialog-department/
 import { DepartmentService } from 'src/app/services/department/department.service';
 import { Department } from 'src/app/classes/department';
 import { QuaterService } from 'src/app/services/quater/quater.service';
+import { User } from 'src/app/classes/user';
 
 @Component({
   selector: 'app-departments',
@@ -14,6 +15,7 @@ import { QuaterService } from 'src/app/services/quater/quater.service';
   styleUrls: ['./departments.component.scss']
 })
 export class DepartmentsComponent {
+  userdata!:User;
   department:any;
   displayedColumns: string[] = ['ID', 'NAME','ACTION']; // Add more column names as needed
  //put your data array here
@@ -23,7 +25,11 @@ dataSource:any;
   constructor(private _bottomSheet: MatBottomSheet,
     private departmentService:DepartmentService,
     private quaterService:QuaterService
-    ) {}
+    ) {
+      const userStringData: any = sessionStorage.getItem('userdata');
+      this.userdata = JSON.parse(userStringData);
+      console.log(this.userdata);
+    }
   ngOnInit(): void {
     this.departmentService.getAll().subscribe((data)=>{
       console.log(data);

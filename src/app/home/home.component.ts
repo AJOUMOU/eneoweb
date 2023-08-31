@@ -11,6 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { ViewUserBottomSheetComponent } from '../components/view-user-bottom-sheet/view-user-bottom-sheet.component';
 import { Router } from '@angular/router';
 import { User } from '../classes/user';
+import { UserService } from '../services/user/user.service';
+import { DepartmentService } from '../services/department/department.service';
+import { RequestService } from '../services/request/request.service';
 
 export interface PeriodicElement {
   name: string;
@@ -44,7 +47,12 @@ export class HomeComponent {
   userdata!: User;
 
 
-  constructor(private _bottomSheet: MatBottomSheet, private router: Router) {
+  constructor(private _bottomSheet: MatBottomSheet,
+     private router: Router,
+     private userService:UserService,
+     private departmentService:DepartmentService,
+     private requestService : RequestService
+     ) {
     const userStringData: any = sessionStorage.getItem('userdata');
     this.userdata = JSON.parse(userStringData);
     console.log(this.userdata);

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatPaginator } from '@angular/material/paginator';
+import { User } from 'src/app/classes/user';
 import { BottomSheetApdateQuaterComponent } from 'src/app/components/bottom-sheet-apdate-quater/bottom-sheet-apdate-quater.component';
 import { BottomSheetQuatersComponent } from 'src/app/components/bottom-sheet-quaters/bottom-sheet-quaters.component';
 import { QuaterService } from 'src/app/services/quater/quater.service';
@@ -12,6 +13,7 @@ import { QuaterService } from 'src/app/services/quater/quater.service';
 })
 export class QuatersComponent {
 quaters:any;
+userdata!:User
 public static quaterId:number;
   displayedColumns: string[] = ['NAME', 'Department','ACTION']; // Add more column names as needed
  //put your data array here
@@ -19,6 +21,12 @@ dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private _bottomSheet: MatBottomSheet, private quaterService:QuaterService) {
+
+    const userStringData: any = sessionStorage.getItem('userdata');
+    this.userdata = JSON.parse(userStringData);
+    console.log(this.userdata);
+
+
     this.quaterService.getAllQuater().subscribe((data)=>{
 console.log(data);
 this.quaters = data;

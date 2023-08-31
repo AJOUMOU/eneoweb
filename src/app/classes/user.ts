@@ -8,4 +8,5 @@ export class User {
     role!:string;
     token?:string;
     address?:string;
+    department?:string;
 }

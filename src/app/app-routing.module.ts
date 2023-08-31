@@ -11,6 +11,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DirectorComponent } from './pages/director/director.component';
 import { QuatersComponent } from './pages/quaters/quaters.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
+import { RequestComponent } from './pages/request/request.component';
+import { MyRequestComponent } from './pages/my-request/my-request.component';
+import { AdminRequestComponent } from './pages/admin-request/admin-request.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -24,12 +27,10 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'director',component:DirectorComponent},
   {path:'quaters',component:QuatersComponent},
-  {path:'document',component:DocumentsComponent}
-  
-
-
-
-
+  {path:'document',component:DocumentsComponent},
+  {path:'request',component:RequestComponent},
+  {path:'myrequest',component:MyRequestComponent},
+  {path:'adminRequest',component:AdminRequestComponent}
 ];
 
 @NgModule({
